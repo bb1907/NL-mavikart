@@ -1,5 +1,6 @@
 import { CreditCard, FileText, UserCheck, MapPin, Building2, Calculator, Users, HandCoins, Languages, HelpCircle } from 'lucide-react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 const services = [
   { id: 1, title: 'BSN, DigiD ve Banka Hesabı', icon: <CreditCard />, desc: 'Hollanda\'da finansal ve yasal kimliğinizin temellerini atıyoruz.' },
@@ -47,6 +48,25 @@ export default function Services() {
               <p className="text-on-surface-variant leading-relaxed">{service.desc}</p>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-24 p-12 rounded-[2.5rem] bg-surface-container-highest text-center space-y-8 relative overflow-hidden">
+          <div className="relative z-10 space-y-6">
+            <h2 className="font-display text-4xl font-extrabold text-primary">Sürecinizi Hemen Başlatalım</h2>
+            <p className="text-lg text-on-surface-variant max-w-2xl mx-auto font-medium">
+              Hollanda'daki yeni yaşamınız için gerekli olan tüm adımları tek elden yönetiyoruz. Uzman ekibimizle profesyonel destek almak için formu doldurun.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/uygunluk-testi" className="px-10 py-5 bg-primary-container text-white font-bold rounded-xl shadow-xl hover:bg-primary transition-all active:scale-95">
+                Uygunluk Testini Çöz
+              </Link>
+              <Link to="/basvuru" className="px-10 py-5 border-2 border-primary-container text-primary-container font-bold rounded-xl hover:bg-primary-container hover:text-white transition-all active:scale-95">
+                Başvuru Formuna Git
+              </Link>
+            </div>
+          </div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary-container/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary-container/5 rounded-full -ml-32 -mb-32 blur-3xl"></div>
         </div>
       </div>
     </motion.div>

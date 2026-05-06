@@ -14,6 +14,7 @@ import FAQ from './pages/FAQ';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Eligibility from './pages/Eligibility';
+import Privacy from './pages/Privacy';
 import { useEffect } from 'react';
 
 // Scroll to top on route change
@@ -46,6 +47,7 @@ function PageRoutes() {
           <Route path="/uygunluk-testi" element={<Eligibility />} />
           <Route path="/basvuru" element={<Contact />} />
           <Route path="/iletisim" element={<Contact />} />
+          <Route path="/gizlilik" element={<Privacy />} />
         </Routes>
       </motion.div>
     </AnimatePresence>

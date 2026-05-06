@@ -37,8 +37,15 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [activeCategory, setActiveCategory] = useState('Genel Bilgiler');
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [activeCategory, setActiveCategory] = useState(categories[0]);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    setOpenIndex(null);
+  };
+
+  const filteredFaqs = faqs.filter(f => f.category === activeCategory);
 
   return (
     <motion.div 
@@ -93,7 +100,7 @@ export default function FAQ() {
               {categories.map((cat) => (
                 <button
                   key={cat}
-                  onClick={() => setActiveCategory(cat)}
+                  onClick={() => handleCategoryChange(cat)}
                   className={`w-full flex items-center justify-between p-5 rounded-2xl transition-all font-bold ${
                     activeCategory === cat 
                     ? 'bg-primary-container text-white shadow-lg translate-x-1' 
@@ -118,7 +125,7 @@ export default function FAQ() {
 
         {/* Accordions */}
         <div className="lg:col-span-8 space-y-6">
-          {faqs.map((faq, idx) => (
+          {filteredFaqs.length > 0 ? filteredFaqs.map((faq, idx) => (
             <motion.div
               layout
               key={idx}
@@ -168,7 +175,11 @@ export default function FAQ() {
                 )}
               </AnimatePresence>
             </motion.div>
-          ))}
+          )) : (
+            <div className="text-center py-20 bg-white border border-outline-variant/30 rounded-3xl">
+              <p className="text-on-surface-variant">Bu kategori için henüz soru eklenmedi.</p>
+            </div>
+          )}
 
           {/* Info Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
