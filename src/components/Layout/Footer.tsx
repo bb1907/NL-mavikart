@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="space-y-6 max-w-md">
             <div className="flex items-center gap-3">
               <Landmark className="text-white w-8 h-8" />
-              <span className="font-display text-2xl font-bold text-white">NL-MaviKart</span>
+              <span className="font-display text-2xl font-bold text-white">Yeni Hayat</span>
             </div>
             <p className="text-on-primary/70 leading-relaxed">
               Hollanda'da Yeni Bir Hayat: Vize, Oturum, BSN, Şirket Kurulumu ve Entegrasyon süreçlerinde uzman danışmanlık. 
@@ -43,7 +43,7 @@ export default function Footer() {
         
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-on-primary/60 text-center md:text-left">
-            © 2024 NL-MaviKart | Hollanda Göçmenlik ve Vatandaşlık Dairesi (IND) ile Uyumlu. Tüm hakları saklıdır.
+            © 2026 Yeni Hayat | Hollanda Göçmenlik ve Vatandaşlık Dairesi (IND) ile Uyumlu. Tüm hakları saklıdır.
           </p>
         </div>
       </div>

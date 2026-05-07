@@ -48,6 +48,7 @@ function PageRoutes() {
           <Route path="/basvuru" element={<Contact />} />
           <Route path="/iletisim" element={<Contact />} />
           <Route path="/gizlilik" element={<Privacy />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </motion.div>
     </AnimatePresence>

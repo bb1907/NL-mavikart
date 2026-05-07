@@ -25,7 +25,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 active:scale-95 transition-transform" onClick={() => setIsMenuOpen(false)}>
           <Landmark className="text-primary-container w-8 h-8" />
-          <span className="font-display text-2xl font-extrabold text-primary-container tracking-tight">NL-MaviKart</span>
+          <span className="font-display text-2xl font-extrabold text-primary-container tracking-tight">Yeni Hayat</span>
         </Link>
         
         <nav className="hidden md:flex items-center gap-8">
