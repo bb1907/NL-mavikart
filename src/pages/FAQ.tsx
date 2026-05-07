@@ -1,38 +1,86 @@
-import { ChevronRight, Users, Plane, Sparkles, ShieldCheck, Zap, HelpCircle, Mail, Globe } from 'lucide-react';
+import { ChevronRight, Users, Plane, Sparkles, ShieldCheck, Zap, HelpCircle, Mail, Globe, CreditCard, FileText, UserCheck, MapPin, Building2, Calculator, HandCoins, Languages } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const categories = [
-  'Genel Bilgiler',
-  'Aile Birleşimi',
-  'Avrupa Hareketliliği',
-  'Vatandaşlık Süreci',
+  'Vize ve Oturum',
+  'BSN ve Finans',
+  'İş ve Girişimcilik',
+  'Entegrasyon ve Sosyal Haklar',
 ];
 
 const faqs = [
+  // Vize ve Oturum
   {
-    category: 'Aile Birleşimi',
-    question: 'Aile üyeleri Hollanda\'da çalışabilir mi?',
-    answer: 'Evet, kesinlikle. Mavi Kart (EU Blue Card) sahiplerinin aile bireyleri, Hollanda\'ya vardıkları andan itibaren tam çalışma iznine sahip olurlar.',
+    category: 'Vize ve Oturum',
+    question: 'Hollanda Mavi Kart (EU Blue Card) nedir?',
+    answer: 'AB Mavi Kart, yüksek nitelikli uzmanlara Avrupa Birliği ülkelerinde çalışma ve ikamet imkanı sağlayan prestijli bir izindir.',
     details: [
-      'Eşler için herhangi bir ek izin gerekmez.',
-      'Serbest meslek veya maaşlı bir işte çalışabilirler.',
-      'Çocuklar Hollanda eğitim sisteminden doğrudan yararlanabilir.'
+      'Yüksek maaş eşiği ve eğitim şartı aranır.',
+      'Diğer AB ülkelerine hareketlilik kolaylığı sağlar.',
+      'Aile bireylerine anında çalışma izni verir.'
     ],
     icon: <Users className="w-5 h-5" />,
   },
   {
-    category: 'Avrupa Hareketliliği',
-    question: 'Diğer AB ülkelerine ne zaman geçebilirim?',
-    answer: 'Hollanda\'da ilk aldığınız Mavi Kart ile 12 ay sonra başka bir Avrupa Birliği üye ülkesine taşınma ve orada çalışma hakkına sahip olursunuz. Bu süre, AB içi hareketlilik yasaları çerçevesinde Blue Card sahiplerine sunulan en büyük avantajlardan biridir.',
+    category: 'Vize ve Oturum',
+    question: 'MVV vizesi nedir ve kimler almalıdır?',
+    answer: 'MVV (Machtiging tot Voorlopig Verblijf), Hollanda\'da 90 günden fazla kalacak kişilerin kendi ülkelerinden almaları gereken geçici oturum vizesidir.',
     icon: <Plane className="w-5 h-5" />,
   },
+  
+  // BSN ve Finans
   {
-    category: 'Vatandaşlık Süreci',
-    question: 'Hollanda vatandaşlığına giden yol nasıl işler?',
-    answer: 'Hollanda vatandaşlığına giden süreç genellikle 5 yıllık kesintisiz ikamet gerektirir. Mavi Kart sahipleri için bu süreç 5 yıl boyunca yasal olarak ikamet etmek ve dil sınavını (Inburgeringsexamen) geçmekle başlar.',
-    icon: <Sparkles className="w-5 h-5" />,
+    category: 'BSN ve Finans',
+    question: 'BSN numarası nedir ve neden gereklidir?',
+    answer: 'BSN (Burgerservicenummer), Hollanda\'daki kişisel vatandaşlık numaranızdır. Banka hesabı açmak, maaş almak ve sağlık sigortası yaptırmak için zorunludur.',
+    icon: <CreditCard className="w-5 h-5" />,
+  },
+  {
+    category: 'BSN ve Finans',
+    question: 'DigiD nedir ve nasıl aktif edilir?',
+    answer: 'DigiD, Hollanda devlet kurumlarıyla online işlemler yapmanızı sağlayan dijital kimliğinizdir.',
+    details: [
+      'Belediye kaydından sonra başvurulur.',
+      'Adresinize gelen aktivasyon kodu ile onaylanır.',
+      'Vergi ve sağlık portalı girişlerinde kullanılır.'
+    ],
+    icon: <ShieldCheck className="w-5 h-5" />,
+  },
+
+  // İş ve Girişimcilik
+  {
+    category: 'İş ve Girişimcilik',
+    question: 'ZZP (Şahıs Şirketi) ve BV (Limited Şirket) arasındaki fark nedir?',
+    answer: 'ZZP, serbest çalışanlar için hızlı kurulan bir yapıdır; BV ise daha büyük ölçekli ve hukuki sorumluluğu sınırlı olan şirket türüdür.',
+    icon: <Building2 className="w-5 h-5" />,
+  },
+  {
+    category: 'İş ve Girişimcilik',
+    question: '30% Tax Ruling (Vergi Muafiyeti) avantajı nedir?',
+    answer: 'Yurt dışından gelen yüksek nitelikli göçmenler için maaşlarının %30\'unun vergiden muaf tutulduğu, ciddi finansal tasarruf sağlayan bir teşviktir.',
+    icon: <Calculator className="w-5 h-5" />,
+  },
+
+  // Entegrasyon ve Sosyal Haklar
+  {
+    category: 'Entegrasyon ve Sosyal Haklar',
+    question: 'Adres kaydı (BRP) yaptırmak zorunlu mu?',
+    answer: 'Evet, Hollanda\'da yaşamaya başladıktan sonraki 5 gün içinde ikamet ettiğiniz belediyeye kayıt yaptırmanız yasal bir zorunluluktur.',
+    icon: <MapPin className="w-5 h-5" />,
+  },
+  {
+    category: 'Entegrasyon ve Sosyal Haklar',
+    question: 'Çocuk Parası (Kinderbijslag) başvuru şartları nelerdir?',
+    answer: 'Hollanda\'da yaşayan ve çalışan her ebeveyn, 18 yaş altı her çocuğu için devletten üç ayda bir ödenen çocuk parası desteği alabilir.',
+    icon: <HandCoins className="w-5 h-5" />,
+  },
+  {
+    category: 'Entegrasyon ve Sosyal Haklar',
+    question: 'Belgelerimin tercümesi Hollanda\'da geçerli olur mu?',
+    answer: 'Yeminli tercüman tarafından yapılan ve gerektiğinde apostil şerhi taşıyan belgeler Hollanda resmi makamlarınca kabul edilir.',
+    icon: <Languages className="w-5 h-5" />,
   },
 ];
 
