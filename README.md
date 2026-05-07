@@ -1,20 +1,18 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Hollanda'da Yeni Bir Hayat - Cloudflare Pages Dağıtım Rehberi
 
-# Run and deploy your AI Studio app
+Bu proje **Vite + React** kullanılarak geliştirilmiştir. Cloudflare Pages üzerinde yayınlamak için aşağıdaki adımları izleyin:
 
-This contains everything you need to run your app locally.
+## 1. Cloudflare Pages Ayarları
+Projenizi Cloudflare Pages'e bağladığınızda eğer sistem otomatik tanımıyorsa şu ayarları manuel girin:
 
-View your app in AI Studio: https://ai.studio/apps/2849c5e0-e777-40f3-8f55-dda8d7b80295
+- **Framework Preset:** `None`
+- **Build Command:** `npm run build`
+- **Build Output Directory:** `dist`
+- **Root Directory:** `/`
 
-## Run Locally
+## 2. Ortam Değişkenleri (Environment Variables)
+Eğer yapay zeka özelliklerini kullanıyorsanız, Cloudflare dashboard'unda şu değişkeni tanımlayın:
+- `GEMINI_API_KEY`: Sizin Gemini API anahtarınız.
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 3. Yönlendirmeler (Redirects)
+Sitedeki sayfaların (örn: /hizmetler) yenileme yapıldığında 404 vermemesi için `public/_redirects` dosyası projeye dahil edilmiştir. Cloudflare bunu otomatik olarak algılayacaktır.
