@@ -25,7 +25,7 @@ export default function Header() {
     <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 active:scale-95 transition-transform" onClick={() => setIsMenuOpen(false)}>
-          <Logo size={40} />
+          <Logo size={52} />
           <span className="font-display text-2xl font-extrabold text-primary-container tracking-tight">Yeni Hayat</span>
         </Link>
         

@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-12">
           <div className="space-y-6 max-w-md">
             <div className="flex items-center gap-3">
-              <Logo size={40} />
+              <Logo size={52} />
               <span className="font-display text-2xl font-bold text-white">Yeni Hayat</span>
             </div>
             <p className="text-on-primary/70 leading-relaxed">
